@@ -1,7 +1,7 @@
 import time
-from rate_limiter.sliding_window import SlidingWindow
+from rate_limiter.token_bucket import TokenBucket
 
-limiter = SlidingWindow(3, 10)
+limiter = TokenBucket(3, 0.5)
 
 for i in range(4):
     print(limiter.acquire())
