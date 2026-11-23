@@ -1,4 +1,4 @@
-class RateLimiter:
+class SimpleRateLimiter:
     def __init__(self, limit):
         self.limit = limit
         self.requests = 0
@@ -11,7 +11,7 @@ class RateLimiter:
         return False
 
 
-limiter = RateLimiter(limit=5)
+limiter = SimpleRateLimiter(limit=5)
 
 for i in range(7):
     result = limiter.acquire()
